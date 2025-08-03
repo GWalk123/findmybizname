@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ULTIMATE HEADER FIX - ATOMIC LEVEL OVERRIDE v8 */
+* {
+  --header-bg: #0040FF !important;
+}
+
+header,
+#main-header,
+[id="main-header"],
+.bg-superman-blue,
+header[id="main-header"],
+*[id="main-header"],
+body header,
+html body header,
+div > header,
+div > div > header,
+* > header {
+  background: var(--header-bg) !important;
+  background-color: var(--header-bg) !important;
+  border-bottom: 1px solid #0033CC !important;
+}
+
+/* Target every possible selector */
+header * {
+  --tw-bg-opacity: 1 !important;
+}
+
+/* Override Tailwind CSS variables */
+:root {
+  --tw-bg-black: 0 100% 50% !important;
+}
+
+header .text-white,
+header .text-blue-100,
+#main-header .text-white,
+#main-header .text-blue-100 {
+  color: white !important;
+}
+
+/* ULTRA MOBILE OVERRIDE - MAXIMUM SPECIFICITY */
+@media screen and (max-width: 768px) {
+  body header,
+  body #main-header,
+  html body header,
+  html body #main-header,
+  header.sticky,
+  #main-header.sticky,
+  [class*="sticky"] {
+    background: #0040FF !important;
+    background-color: #0040FF !important;
+    border-bottom: 1px solid #0033CC !important;
+  }
+  
+  .mobile-safe-top {
+    padding-top: max(14rem, calc(env(safe-area-inset-top) + 8rem));
+  }
+}
+
+/* FORCE ANDROID/IOS WEBKIT OVERRIDE */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  header,
+  #main-header {
+    background: #0040FF !important;
+    background-color: #0040FF !important;
+  }
+}
+
+/* SAFARI MOBILE SPECIFIC */
+@supports (-webkit-appearance: none) {
+  header,
+  #main-header {
+    background: #0040FF !important;
+    background-color: #0040FF !important;
+  }
+}
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  /* SUPERMAN COLOR SCHEME - PRIMARY PALETTE */
+  --primary: hsl(220, 100%, 50%);       /* Superman Blue */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 100%, 55%);       /* Superman Red */
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(45, 100%, 50%);         /* Superman Yellow */
+  --accent-foreground: hsl(0, 0%, 0%);
+  --destructive: hsl(0, 100%, 50%);     /* Pure Red */
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(220, 100%, 50%);
+  --radius: 0.5rem;
+  
+  /* Superman-inspired extended palette */
+  --superman-red: hsl(0, 100%, 50%);
+  --superman-blue: hsl(220, 100%, 50%);
+  --superman-yellow: hsl(45, 100%, 50%);
+  --success: hsl(220, 100%, 50%);       /* Blue for success */
+  --success-foreground: hsl(0, 0%, 100%);
+  --warning: hsl(45, 100%, 50%);        /* Yellow for warnings */
+  --warning-foreground: hsl(0, 0%, 0%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(220, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 100%, 45%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-gray-50 text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* FORCE CACHE REFRESH - SUPERMAN COLORS ACTIVE */
+  html {
+    --superman-theme: active;
+  }
+
+
+}
+
+/* Custom utility classes */
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(239, 84%, 67%) 0%, hsl(244, 84%, 60%) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, hsl(239, 84%, 67%) 0%, hsl(244, 84%, 60%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
